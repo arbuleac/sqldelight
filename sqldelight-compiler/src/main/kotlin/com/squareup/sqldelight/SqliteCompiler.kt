@@ -39,7 +39,7 @@ class SqliteCompiler {
             val typeSpec = TypeSpec.interfaceBuilder(className)
             val typeSpecSuper = TypeSpec.interfaceBuilder(classNameSuper)
                     .addModifiers(PUBLIC)
-                    .addSuperinterface("android.os.Parcelable".pathAsType())
+                    .addSuperinterface(ClassName.get("android.os", "Parcelable"))
 
             status.queries.filter { it.requiresType }.forEach { queryResults ->
                 typeSpec.addType(queryResults.generateInterface())
