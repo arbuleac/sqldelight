@@ -141,7 +141,7 @@ class SqliteCompiler {
         val COLUMN_ADAPTER_TYPE = ClassName.get("com.squareup.sqldelight", "ColumnAdapter")
 
         fun interfaceName(sqliteFileName: String) = sqliteFileName + "Model"
-        fun interfaceNameSuper(sqliteFileName: String) = "I" + sqliteFileName
+        fun interfaceNameSuper(sqliteFileName: String) = sqliteFileName
         fun constantName(name: String) = name.toUpperCase(Locale.US)
         fun compile(
                 parseContext: SqliteParser.ParseContext,
